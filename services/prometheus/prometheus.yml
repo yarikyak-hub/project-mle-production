@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 5s # Частота сбора метрик
+
+scrape_configs:
+  - job_name: 'ml_service'
+    static_configs:
+      # В Docker Compose мы обращаемся к сервису по его имени (ml_service) и внутреннему порту (8000)
+      - targets: ['ml_service:8000']
